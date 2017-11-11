@@ -1,15 +1,28 @@
-'use strict'
+'use strict';
 
-module.exports= (code) => {
+const request = require('request-promise');
 
-console.log('Authorizer was called');
-const clientId = process.env.SLACK_CLIENT_ID;
-const clientSecret = process.env.SLACK_CLIENT_SECRET;
+module.exports = (code) => {
+  console.log('Authorizer was called');
 
-const OAuthURL='https://slack.com/api/oauth.access?' +
-'client_id' + clientId + '&' +
-'client_secret' + clientSecret + '&' +
-'code' + code;
+  const clientId = process.env.SLACK_CLIENT_ID;
+  const clientSecret = process.env.SLACK_CLIENT_SECRET
 
-console.log(OAuthURL);
+  const oauthURL = 'https://slack.com/api/oauth.access?' +
+    'client_id=' + clientId + '&' +
+    'client_secret=' + clientSecret + '&' +
+    'code=' + code;
+
+  console.log(oauthURL);
+
+  const options = {
+    url: oauthURL,
+    json: true,
+  };
+
+  return request(options)
+    .then((response) => {
+      console.log(response.access_token);
+    })
+    .catch((error) => error);
 }
