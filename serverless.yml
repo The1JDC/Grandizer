@@ -20,6 +20,10 @@ service: Grandizer # NOTE: update this with your service name
 provider:
   name: aws
   runtime: nodejs6.10
+  environment:
+    SLACK_CLIENT_ID: '261600932966.270546200163'
+    SLACK_CLIENT_SECRET: '1f670c76f7353bfddbf57a6839a9230b'
+
 
 # you can overwrite defaults here
 #  stage: dev

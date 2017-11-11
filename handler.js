@@ -1,10 +1,17 @@
 'use strict';
 
+const authorizer = require('./authorizer');
+
 module.exports.authorization = (event, context, callback) => {
+
+  const code = event.queryStringParameters.code;
+  console.log(code);
+  authorizer(code);
+
   const response = {
     statusCode: 200,
     body: JSON.stringify({
-      message: 'Authorization deployed',
+      message: 'Authorization was deployed',
       input: event,
     }),
   };
