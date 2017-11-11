@@ -1,0 +1,9 @@
+# package directories
+node_modules
+jspm_packages
+
+# Serverless directories
+.serverless
+
+#serverless yml file as I am putting the security right now in it
+serverless.yml
