@@ -1,0 +1,11 @@
+{
+  "name": "grandizer",
+  "version": "1.0.0",
+  "description": "this will make your connections Grand",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Joseph de Castelnau",
+  "license": "ISC"
+}
