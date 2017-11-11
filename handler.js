@@ -1,4 +1,6 @@
+
 'use strict';
+//main handler
 
 const authorizer = require('./authorizer');
 
